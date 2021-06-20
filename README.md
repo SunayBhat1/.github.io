@@ -1,10 +1,11 @@
 Sunay Bhat's Personal Website
 ==============================
-Description: 
+
+Description: My personal website, built from a template and customized.  
 
 Sources
 ------------
-Template: https://html5up.net/solid-state
+Template: https://html5up.net/solid-state  
 Form Setup: https://towardsdatascience.com/how-to-create-a-stunning-personal-portfolio-website-for-free-50ec15b059dd
 
 Page and File Organization
@@ -18,7 +19,7 @@ Page and File Organization
     │
     ├── /images               <- Images used on website (background and icons)
     │
-    ├── /docs                 <- Non-resume documents linkes
+    ├── /docs                 <- Non-resume documents
     │
     ├── /assets               <- CSS, JS, etc
     │
@@ -27,9 +28,11 @@ Page and File Organization
     
 License
 ------------
-Solid State by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Solid State by HTML5 UP  
+html5up.net | @ajlkn  
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)  
+
+
 --------
 
 
