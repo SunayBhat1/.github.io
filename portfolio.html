@@ -31,6 +31,8 @@
 								<li><a href="portfolio.html">Research and Projects</a></li>
 								<li><a href="BhatmanBlogs.html">Blogs</a></li>
 								<li><a href="./my_resume.pdf">My Resume</a></li>
+								<li><a href="https://github.com/SunayBhat1">My GitHub</a></li>
+								<li><a href="https://x.com/sunaybhat">My Twitter/X</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -41,42 +43,57 @@
 						<header>
 							<div class="inner">
 								<h2>Research and Projects</h2>
-								<p>An overview of my major projects, publications, and focuses of my work<br>(that I can publicly share)</p>
+								<p>An overview of my major projects and publications</p>
 							</div>
 						</header>
 
-						<!-- Projects -->
+						<!-- Research -->
 						<section id="four" class="wrapper alt style1">
 							<div class="inner">
-								<h2 class="major">Projects/Relevant Coursework</h2>
-								<p>The following is a list of major academic projects done through coursework, compeitions, etc along with links to resources.</p>
+								<h2 class="major">Research Projects</h2>
+								<p>The following is a list of major research projects done through my Ph.D. and on my own time.</p>
 								<section class="features">
 									<article>
-										<a href="https://github.com/SunayBhat1/Double-CartPole-239AS-UCLA-Project" class="image">
-											<video width="100%" controls loop autoplay><source src="images/rl.mp4" type="video/mp4">Your browser does not support this video tag.</video>
-										</a>
-										<h3 class="major">Reinforcement Learning (RL)</h3>
-										<p>In this graduate course group project, we apply the latest in RL algorithmic techniques to solve a complex controls problem that is an extension of the classic cart pole problem.</p>
-										<a href="docs/RL.pdf" class="special">Report</a>
-										<a href="https://github.com/SunayBhat1/Double-CartPole-239AS-UCLA-Project" class="special">Github Repository</a>
+										<a class="image"><img src="images/PureGen.jpg" alt="" /></a>
+										<h3 class="major">PureGen: Universal Data Purification for Train-Time Poison Defense via Generative Model Dynamics</h3>
+										<p>
+											Train-time data poisoning attacks compromise machine learning models by introducing adversarial examples during training, causing misclassification. 
+											We propose universal data purification methods using a stochastic transform, Ψ(x), implemented via iterative Langevin dynamics of Energy-Based Models (EBMs) and Denoising Diffusion Probabilistic Models (DDPMs).
+											Our approach purifies poisoned data with minimal impact on classifier generalization achieve State-of-the-Art defense performance without requiring specific knowledge of the attack or classifier.
+										</p>
+										<a href="https://arxiv.org/abs/2405.18627" class="special">Paper</a>
+										<a href="https://github.com/SunayBhat1/PureGen_PoisonDefense" class="special">Github</a>
+										<a href="https://medium.com/@sunay_bhat/puregen-deep-learning-poison-attack-defense-via-generative-models-7aa05caf04db" class="special">Medium Blog</a>
 									</article>
 									<article>
-										<a class="image"><img src="images/graph.png" alt="" /></a>
-										<h3 class="major">Graph Theory</h3>
-										<p>In a series of graduate course group projects, we explored graph theory and network properties in stock market data, traffic data, social network data, and randomly generated Erdos-Renyi and Barabási–Albert networks. Properties of these networks such as vertex degrees, random walks, modularity and community structure, edge weights, and more were explored to generate real-world insights. We also utilized inverse reinforcement learning to emulate intelligent behavior for an RL agent.</p>
+										<a class="image"><img src="images/cshtest.png" alt="" /></a>
+										<h3 class="major">Causal Structural Hypothesis Testing and Data Generation Models</h3>
+										<p>
+											In this work, we introduce CSHTEST and CSVHTEST, novel architectures for causal model hypothesis testing and data generation. 
+											These models use non-parametric, structural causal knowledge and approximate a causal model's functional relationships using deep neural networks. 
+											The architectures are tested on extensive simulated DAGs, a synthetic pendulum dataset, and a real-world medical trauma dataset to show practical use for causal inference.
+										</p>
+										<a href="https://neurips.cc/virtual/2022/58649" class="special">Paper/Video</a>
+										<a href="https://github.com/SunayBhat1/Causal-Structural-Hypothesis-Testing" class="special">Github</a>
 									</article>
 									<article>
-										<a href="docs/Speaker_Rrecog_Report.pdf" class="image"><img src="images/speak_recog.png" alt="" /></a>
-										<h3 class="major">Speaker Recognition</h3>
-										<p>This graduate course group project was a speaker verification algorithm that utilized speech Cepstrum coefficients, Dynamic Time Warping, and Mahalanobis Distance to determine if two audio clips are from the same speaker.  </p>
-										<a href="docs/Speaker_Rrecog_Report.pdf" class="special">Report</a>
+										<a class="image"><img src="images/lavae.png" alt="" /></a>
+										<h3 class="major">Towards Composable Distributions of Latent Space Augmentations</h3>
+										<p>
+											We propose a composable framework for latent space image augmentation, based on the Variational Autoencoder (VAE) architecture, that allows for easy combination of multiple augmentations through linear transformations within the latent space.
+											This method explores losses and augmentation latent geometry to ensure transformations are composable and involuntary, enabling combinations or inversions, and effectively constrains the VAE’s bottleneck to preserve specific augmentation variances and image features. 
+											We demonstrate the effectiveness of our approach on the MNIST dataset, showing improved control and geometric interpretability of the latent space compared to standard and Conditional VAEs.
+										</p>
+										<a href="https://arxiv.org/abs/2303.03462" class="special">Paper</a>
 									</article>
 									<article>
-										<a href="docs/minkao_robot.pdf" class="image"><img src="images/robot.png" alt="" /></a>
-										<h3 class="major">Autonomous Tour Guide Robot</h3>
-										<p>My senior design undergraduate course project was an autonomous robot tour guide of the electrical engineering department building. We employed a full embedded system design from the PCB, sensor components, vehicle and robotic suystems, C++ coding, etc to develop the initial prototype and demo tour in one semester.</p>
-										<a href="docs/minkao_robot.pdf" class="special">Report</a>
-										<a href="https://trace.tennessee.edu/utk_chanhonoproj/2140/" class="special">UTK Reference</a>
+										<a class="image"><img src="images/debias.png" alt="" /></a>
+										<h3 class="major">De-Biasing Generative Models using Counterfactual Methods</h3>
+										<p>
+											Causal Counterfactual Generative Model (CCGM) is a VAE based framework with a partially trainable causal layer that learns causal relationships without compromising reconstruction fidelity, allowing for bias analysis, interventions, and scenario simulations.
+											Our method, which combines a causal latent space VAE model with modifications for causal fidelity, can generate de-biased datasets from biased training data and offers finer control over the causal layer, as demonstrated by our initial experiments showing high fidelity in generating images and tabular data aligned with the causal framework.
+										</p>
+										<a href="https://arxiv.org/abs/2207.01575" class="special">Paper</a>
 									</article>
 								</section>
 								<ul class="actions">
@@ -90,25 +107,19 @@
 							<header>
 								<div class="inner">
 									<h2>Academic Publications</h2>
-									<!-- <p>An overview of my major projects, publications, and focuses of my work<br>(that I can publicly share)</p> -->
-									<p>Azari, H., Bhat, G., Hiremath, N. <b>Bhat, S.</b> (2017) Structure and Properties of Polypropylene Graphene Composite
-									Filaments. <i>Proceedings of the Fiber Society 2017 Fall Meeting and Technical Conference.</i>, Athens, GA (November 2017).</p>
+									<p>Bhat, Sunay Gajanan. <b>(2024)</b> Robust Modeling through Causal Priors and Data Purification in Machine Learning. <i>PhD thesis, UCLA.</i></p>
+									<p>Bhat, Sunay, Jiang, Jeffrey, Pooladzandi, Omead, Branch, Alexander, Pottie, Gregory. <b>(2024)</b> PureGen: Universal Data Purification for Train-Time Poison Defense via Generative Model Dynamics. <i>arXiv preprint arXiv:2405.18627.</i></p>
+									<p>Pooladzandi, Omead, Jiang, Jeffrey, Bhat, Sunay, Pottie, Gregory. <b>(2024)</b> PureEBM: Universal Poison Purification via Mid-Run Dynamics of Energy-Based Models. <i>arXiv preprint arXiv:2405.19376.</i></p>
+									<p>Pooladzandi, Omead, Jiang, Jeffrey, Bhat, Sunay, Pottie, Gregory. <b>(2023)</b> Towards Composable Distributions of Latent Space Augmentations. <i>arXiv preprint arXiv:2303.03462.</i></p>
+									<p>Bhat, Sunay Gajanan, Pooladzandi, Omead, Jiang, Jeffrey, Pottie, Gregory. <b>(2022)</b> Causal Structural Hypothesis Testing and Data Generation Models. <i>Proceedings of the NeurIPS 2022 Workshop on Synthetic Data for Empowering ML Research.</i></p>
+									<p>Bhat, Sunay, Jiang, Jeffrey, Pooladzandi, Omead, Pottie, Gregory. <b>(2022)</b> De-biasing generative models using counterfactual methods. <i>arXiv preprint arXiv:2207.01575.</i></p>
 								</div>
 							</header>
+
 							<header>
 								<div class="inner">
-									<h2>Op-Eds</h2>
-									<h3>WSJ Future View (3 Most Recent)</h3>
-									<a href="https://www.wsj.com/articles/china-beijing-communist-party-ban-videogames-11631656867"><p><b>Wall Street Journal, Opinion-Future View:</b> <i>Did China Get It Right on Videogames? </i>(Sept 2021)</p></a>
-									<a href="https://www.wsj.com/articles/the-death-of-the-student-athlete-11626215803"><p><b>Wall Street Journal, Opinion-Future View:</b> <i>The NCAA’s ‘Student-Athlete’ Myth </i>(July 2021)</p></a>
-									<a href="https://www.wsj.com/articles/is-there-virtue-in-ceos-signaling-11618353099"><p><b>Wall Street Journal, Opinion-Future View:</b> <i>Is There Virtue in CEOs’ Signaling? </i>(April 2021)</p></a>									
-								</div>
-							</header>
-							<header>
-								<div class="inner">
-									<h2>Blog Posts</h2>
-									<a href="https://medium.com/codex/collection-of-probability-paradoxes-with-code-c02a523bff2e"><p><b>Medium:</b> <i>Collection of Probability Paradoxes (with Code)</p></a>
-									<a href="https://medium.com/codex/fantasy-or-not-reinforcement-learning-and-fantasy-football-part-1-9e4de960c891"><p><b>Medium:</b> <i>Fantasy or Not: Reinforcement Learning and Fantasy Football? (Part 1)</p></a>
+									<h2>Reserach Blog Posts</h2>
+									<a href="https://medium.com/@sunay_bhat/puregen-deep-learning-poison-attack-defense-via-generative-models-7aa05caf04db"><p><b>Medium:</b> <i>PureGen: Deep Learning Poison Attack Defense via Generative Models</i> - June 2024</p></a>
 								</div>
 							</header>
 						</section>
@@ -139,11 +150,12 @@
 								</ul>
 							</form>
 							<ul class="contact">
-								<li class="icon solid fa-home">Santa Barbara, CA</li>
-								<li class="icon solid fa-phone">(865) 898-4443</li>
+								<li class="icon solid fa-home">Los Angeles, CA</li>
 								<li class="icon solid fa-envelope"><a href="mailto:sunaybhat1@gmail.com" title="Personal Email">sunaybhat1@gmail.com</a></li>
 								<li class="icon solid fa-file"><a href="./my_resume.pdf">My Resume</a></li>
+								<li class="icon solid fa-code"><a href="https://github.com/SunayBhat1">My GitHub</a></li>
 								<li class="icon solid fa-user"><a href="https://www.linkedin.com/in/sunay-b-a578939b/"> My Linkedin</a></li>
+								<li class="icon solid fa-hashtag"><a href="https://x.com/sunaybhat"> My Twitter/X</a></li>
 							</ul>
 						</div>
 					</section>
