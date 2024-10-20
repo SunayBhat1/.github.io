@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Tester</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>API Tester</h1>
+        <div class="nav">
+            <button id="nav-hello" class="active">Test Backend Only</button>
+            <button id="nav-openai">Test OpenAI API</button>
+        </div>
+
+        <!-- Test Backend Only Form -->
+        <form id="hello-form" class="active">
+            <label for="hello-name">Enter Your Name:</label>
+            <input type="text" id="hello-name" required>
+            <button type="submit">Send</button>
+        </form>
+
+        <!-- Test OpenAI API Form -->
+        <form id="openai-form">
+            <label for="openai-prompt">Enter a Prompt (e.g., Write a poem):</label>
+            <textarea id="openai-prompt" rows="4" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Result Section for Hello Endpoint -->
+        <div id="hello-result"></div>
+
+        <!-- Result Section for OpenAI Endpoint -->
+        <div id="openai-result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
