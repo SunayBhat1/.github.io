@@ -80,13 +80,16 @@ button[type="submit"]:hover {
     background: #2980b9;
 }
 /* Result Sections */
-#hello-result, #openai-result {
+#hello-result-container, #openai-result-container {
     background: white;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-bottom: 40px;
-    display: none;
+}
+#hello-result, #openai-result {
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 /* Loading Spinner */
 #loading-spinner {

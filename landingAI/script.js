@@ -157,10 +157,12 @@ function initializeApp() {
             // Display the result
             helloResultContainer.style.display = 'block';
             helloResult.textContent = result;
+            console.log('Hello result:', result); // Log the result
         } catch (error) {
             // Hide loading spinner
             loadingSpinner.style.display = 'none';
 
+            console.error('Error:', error); // Log the error
             alert('An error occurred: ' + error.message);
         }
     });
@@ -196,10 +198,12 @@ function initializeApp() {
             // Display the result
             openaiResultContainer.style.display = 'block';
             openaiResult.textContent = result.response;
+            console.log('OpenAI result:', result.response); // Log the result
         } catch (error) {
             // Hide loading spinner
             loadingSpinner.style.display = 'none';
 
+            console.error('Error:', error); // Log the error
             alert('An error occurred: ' + error.message);
         }
     });
