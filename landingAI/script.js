@@ -27,7 +27,7 @@ function initializeApp() {
         [navGenerate, navTest].forEach(btn => btn.classList.remove('active'));
         [generateForm, helloForm, openaiForm].forEach(form => form.classList.remove('active'));
 
-        // Hide result sections
+        // Hide all result sections
         generateResultContainer.style.display = 'none';
         helloResultContainer.style.display = 'none';
         openaiResultContainer.style.display = 'none';
@@ -38,10 +38,21 @@ function initializeApp() {
         if (formName === 'generate') {
             navGenerate.classList.add('active');
             generateForm.classList.add('active');
+            // Show generate result container if it has content
+            if (generateResult.textContent.trim() !== '') {
+                generateResultContainer.style.display = 'block';
+            }
         } else if (formName === 'test') {
             navTest.classList.add('active');
             helloForm.classList.add('active');
             openaiForm.classList.add('active');
+            // Show hello and openai result containers if they have content
+            if (helloResult.textContent.trim() !== '') {
+                helloResultContainer.style.display = 'block';
+            }
+            if (openaiResult.textContent.trim() !== '') {
+                openaiResultContainer.style.display = 'block';
+            }
         }
     }
 
