@@ -4,41 +4,201 @@
     <meta charset="UTF-8">
     <title>API Tester</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Hide the protected content by default */
+        #protected-content {
+            display: none;
+        }
+        /* Style for the password prompt */
+        #password-prompt {
+            text-align: center;
+            margin-top: 100px;
+        }
+        #password-prompt input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #password-prompt button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        /* Loading Spinner Styles */
+        #loading-spinner {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .spinner {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <!-- Include the SHA-256 library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha256.min.js"></script>
+    <!-- Include script.js here, outside the protected-content div -->
+    <script src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>API Tester</h1>
-        <div class="nav">
-            <button id="nav-hello" class="active">Test Backend Only</button>
-            <button id="nav-openai">Test OpenAI API</button>
-        </div>
-
-        <!-- Test Backend Only Form -->
-        <form id="hello-form" class="active">
-            <label for="hello-name">Enter Your Name:</label>
-            <input type="text" id="hello-name" required>
-            <button type="submit">Send</button>
-        </form>
-
-        <!-- Test OpenAI API Form -->
-        <form id="openai-form">
-            <label for="openai-prompt">Enter a Prompt (e.g., Write a poem):</label>
-            <textarea id="openai-prompt" rows="4" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-
-        <!-- Loading Spinner -->
-        <div id="loading-spinner">
-            <div class="spinner"></div>
-        </div>
-
-        <!-- Result Section for Hello Endpoint -->
-        <div id="hello-result"></div>
-
-        <!-- Result Section for OpenAI Endpoint -->
-        <div id="openai-result"></div>
+    <!-- Password Prompt -->
+    <div id="password-prompt">
+        <h2>Enter Password to Access This Page</h2>
+        <input type="password" id="password-input" placeholder="Password">
+        <button id="submit-password">Submit</button>
+        <p id="error-message"></p>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Protected Content -->
+    <div id="protected-content" style="display: none;">
+        <div class="container">
+            <h1>API Tester</h1>
+            <div class="nav">
+                <button id="nav-generate" class="active">Generate Landing Page</button>
+                <button id="nav-test">Test APIs</button>
+            </div>
+
+            <!-- Generate Landing Page Form -->
+            <form id="generate-form" class="active">
+                <h2>Generate Landing Page</h2>
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" placeholder="Pawsome Matcha Dog Tea" required>
+                
+                <label for="product-description">Product Description:</label>
+                <textarea id="product-description" rows="4" placeholder="Introducing Pawsome Matcha, the world's first matcha tea crafted exclusively for dogs. This premium canine-friendly tea is made with organic, dog-safe herbs and is designed to promote relaxation and boost vitality in your furry friends." required></textarea>
+                
+                <label for="custom-copy">Custom Copy:</label>
+                <textarea id="custom-copy" rows="4" placeholder="Unleash the Zen with Pawsome Matcha!
+
+                Introducing the World’s First Matcha Tea Crafted Exclusively for Dogs
+                
+                Is your furry friend barking for a new adventure? Say hello to Pawsome Matcha, the premium canine-friendly tea that’s taking the dog park by storm!
+                
+                    •	🍃 All-Natural Ingredients: Made with organic, dog-safe herbs and a touch of love.
+                    •	🐶 Tail-Wagging Flavor: A delightful taste that’ll have tails wagging and tongues lapping.
+                    •	🧘 Calm and Relaxed: Helps your pup find their inner Zen after a long day of fetch.
+                
+                Why Choose Pawsome Matcha?
+                
+                    •	Boosts Vitality: Gentle energy to keep your dog playful and active.
+                    •	Promotes Relaxation: Ideal for anxious pups needing a moment of calm.
+                    •	Vet-Approved Formula: Safe and nutritious for dogs of all breeds and sizes.
+                
+                Special Offer for Pawsome Pups!
+                
+                Order now and receive a complimentary doggy-sized tea cup with your first purchase. Let your canine companion join you in the joys of a soothing cup of matcha!
+                
+                Bark Less, Wag More!
+                
+                Click the button below to treat your best friend to the ultimate matcha experience with Pawsome Matcha Tea!
+                " required></textarea>
+                
+                <label for="num-variations">Number of Variations:</label>
+                <input type="number" id="num-variations" min="1" max="5" value="2" required>
+                
+                <button type="submit">Generate Landing Pages</button>
+            </form>
+
+            <!-- Hello API Test Form -->
+            <form id="hello-form">
+                <h2>Test Backend Fly.io</h2>
+                <label for="hello-name">Enter Your Name:</label>
+                <input type="text" id="hello-name" required>
+                <button type="submit">Send to Hello API</button>
+            </form>
+
+            <!-- OpenAI API Test Form -->
+            <form id="openai-form">
+                <h2>Test OpenAI API</h2>
+                <label for="openai-prompt">Enter a Prompt (e.g., Write a poem):</label>
+                <textarea id="openai-prompt" rows="4" required></textarea>
+                <button type="submit">Send to OpenAI API</button>
+            </form>
+
+            <!-- Loading Spinner -->
+            <div id="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+
+            <!-- Result Section for Generate Landing Page -->
+            <div id="generate-result-container" style="display: none;">
+                <h3>Generated Landing Pages:</h3>
+                <div id="generate-result"></div>
+            </div>
+
+            <!-- Result Section for Hello Endpoint -->
+            <div id="hello-result-container" style="display: none;">
+                <h3>Hello API Result:</h3>
+                <div id="hello-result"></div>
+            </div>
+
+            <!-- Result Section for OpenAI Endpoint -->
+            <div id="openai-result-container" style="display: none;">
+                <h3>OpenAI API Result:</h3>
+                <div id="openai-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include the password checking script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordPrompt = document.getElementById('password-prompt');
+            const protectedContent = document.getElementById('protected-content');
+
+            function checkPassword() {
+                const inputPassword = document.getElementById('password-input').value;
+                const errorMessage = document.getElementById('error-message');
+                const correctHash = '6b118f775e9a5f29afbe2af30f8897d60ef23015c0c24f1d02d1f236d65e8af9'; // Hash of 'Jasucawo23'
+
+                // Create a new jsSHA object
+                const shaObj = new jsSHA("SHA-256", "TEXT");
+                shaObj.update(inputPassword);
+                const hash = shaObj.getHash("HEX");
+
+                if (hash === correctHash) {
+                    // Set flag in localStorage
+                    localStorage.setItem('passwordEntered', 'true');
+                    showProtectedContent();
+                } else {
+                    errorMessage.textContent = 'Incorrect password. Please try again.';
+                }
+            }
+
+            function showProtectedContent() {
+                passwordPrompt.style.display = 'none';
+                protectedContent.style.display = 'block';
+
+                // Initialize the app
+                initializeApp();
+            }
+
+            // Check if password has been entered before
+            if (localStorage.getItem('passwordEntered') === 'true') {
+                showProtectedContent();
+            }
+
+            // Add event listener for Enter key on password input
+            document.getElementById('password-input').addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    checkPassword();
+                }
+            });
+
+            // Add event listener for Submit button click
+            document.getElementById('submit-password').addEventListener('click', checkPassword);
+        });
+    </script>
 </body>
 </html>

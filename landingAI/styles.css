@@ -111,3 +111,22 @@ button[type="submit"]:hover {
 @media (max-width: 768px) {
     /* Adjust styles for smaller screens if necessary */
 }
+
+.variation {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.variation h4 {
+    margin-top: 0;
+}
+
+.variation iframe {
+    margin-bottom: 10px;
+}
+
+.variation button {
+    display: block;
+    margin: 10px 0;
+}
